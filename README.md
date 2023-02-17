@@ -1,1 +1,1 @@
-# vore-deploy
+# vote-deploy
