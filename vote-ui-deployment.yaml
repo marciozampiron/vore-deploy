@@ -14,7 +14,7 @@ spec:
         app: vote-ui
     spec:
       containers:
-      - image: docker.io/marciozampiron/vote:latest
+      - image: docker.io/marciozampiron/vote:GIT_COMMIT
         name: vote-ui
         ports:
         - containerPort: 80
