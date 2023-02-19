@@ -12,6 +12,8 @@ node {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'marciozampiron', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
+                        sh "echo PASS ${GIT_PASSWORD}"
+                        sh "echo USER ${GIT_USERNAME}"
                         sh "git config user.email marciocastelobranco3@gmail.com"
                         sh "git config user.name marciozampiron"
                         // sh "git switch master"
