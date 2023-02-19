@@ -16,13 +16,13 @@ node {
                         sh "echo USER ${GIT_USERNAME}"
                         sh "git config user.email marciocastelobranco3@gmail.com"
                         sh "git config user.name marciozampiron"
-                        // sh "git switch master"
+                        // sh "git switch main"
                         sh "cat vote-ui-deployment.yaml"
                         sh "sed -i 's+marciozampiron/vote.*+marciozampiron/vote:${DOCKERTAG}+g' vote-ui-deployment.yaml"
                         sh "cat vote-ui-deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job deployment: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/vote-deploy.git HEAD:master"
+                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/vote-deploy.git HEAD:main"
       }
     }
   }
